@@ -1,0 +1,32 @@
+﻿@model List<web1.Models.Pelicula>
+@{
+    ViewBag.Title = "About";
+    string nombre = "Juan Carlos";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Use this area to provide additional information.</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Duración</th>
+            <th>País</th>
+            <th>Lanzamiento</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pelicula in Model)
+        {
+        <tr>
+            <td>@pelicula.Titulo</td>
+            <td>@pelicula.Duracion</td>
+            <td>@pelicula.Pais</td>
+            <td>@pelicula.Publicacion.ToString("dd/MM/yyyy")</td>
+        </tr>
+        }
+    
+    
+    </tbody>
+</table>
